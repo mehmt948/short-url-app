@@ -1,5 +1,8 @@
 ## Short Url App
-#### Written in Rust via axum&askama
+#### Simple web app written in Rust with:
+- axum
+- askama
+- mongodb
 
 ### Dev
 ```bash
