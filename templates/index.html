@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            display: grid;
+            place-items: center;
+            font-family: sans-serif;
+            background-color: #e8eaf6;
+            color: #161c34;
+            padding-top: 200px;
+        }
+
+        div.container {
+            margin-top: 20px
+        }
+
+        div.container p {
+            font-size: 20px;
+        }
+
+        form#url-form input.url {
+            background-color: #fff;
+            border: 1px solid rgba(175, 185, 197, .36);
+            border-radius: 4px;
+            color: #161c34;
+            font-size: 20px;
+            padding: 4px 5px;
+            width: 40vw;
+            height: 40px;
+        }
+
+        form#url-form button[type='submit'] {
+            width: 200px;
+            height: 50px;
+            font-size: 16px;
+            font-weight: 400;
+            background-color: #2281c2;
+            color: white;
+            border-radius: 4px;
+            font-family: sans-serif;
+            float: right;
+            margin-left: 5px;
+        }
+        p.error {
+            color: indianred;
+        }
+    </style>
+</head>
+<body>
+<h1>Url Shortener</h1>
+
+{% if error_msg != "" %}
+<p class="error">{{ error_msg }}</p>
+{% endif %}
+
+<form id="url-form" action="/" method="post">
+    <input type="url" name="url" class="url" minlength="4" maxlength="1024">
+    <button type="submit">Shorten</button>
+</form>
+
+{% if short_id != "" %}
+    <div class="container">
+        <p>Short link is: <a href="/{{short_id}}"> {{short_id}} </a></p>
+    </div>
+{% endif %}
+</body>
+</html>
