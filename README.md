@@ -5,6 +5,7 @@
 - mongodb
 
 ### Dev
+need to provide MONGODB_URI env variable
 ```bash
 cargo run
 ```
