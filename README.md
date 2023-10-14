@@ -1,5 +1,5 @@
 ## Short Url App
-#### Simple web app written in Rust with:
+#### Simple web app written in Rust with repository-interface pattern. other technologies:
 - axum
 - askama
 - mongodb
